@@ -9,8 +9,11 @@
     "db:reset": "dropdb contacts_development && createdb contacts_development && npm run load_schema",
     "load_schema": "psql -d contacts_development < src/models/db/schema/schema.sql",
     "load_contacts": "psql -d contacts_development < test/seed/contacts.sql",
+    "load_users":"psql -d contacts_test < src/models/db/load_data.sql",
     "db:migrate": "db-migrate up --config src/config/db-migrate.json -e ",
     "db:migrate:test": "npm run db:migrate test",
+    "db:migration:create":"npm run db-migrate create $4",
+    "db_migrate:reset":"db-migrate reset",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
